@@ -1,4 +1,5 @@
 *.exe
 *.app
 .DS_Store
-
+CasparCG_client/.DS_Store
+CasparCG_client*/.DS_Store 

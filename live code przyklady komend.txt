@@ -1,0 +1,101 @@
+	poruszanie sie po kartach
+go to the next card
+go to the previous card
+go to card "main menu"
+go to card 2
+go to card id "1004"
+	Getting the value of a property:
+get the visible of field 1
+	Putting the value of a property into a variable:
+put the visible of field 1 into tVisible
+	Using the value of a property directly:
+if the visible of field 1 then
+    ...
+end if
+	Setting the value of a custom property:
+set the cMaximumLines of field 1 to 50
+	Retrieving the value of a custom property:
+get the cMaximumLines of field 1
+	zmiana koloru (field "text")
+set the textColor of field "text" to red
+	okna dialogowe
+answer question "Do you want to continue?" with "Yes" or "No" or "I don't know"
+ask "What is your name?"
+answer file "Select the files you wish to process:"
+ask file "Please name the file:"
+answer folder "Please choose a folder:"
+answer color with "blue"
+	zabawy z tekstem
+get char 2 of field "text" -- returns 'o'
+get word 4 of field "text" -- returns 'sit'
+get line 3 of field "text" -- returns 'Cum sociis natoque penatibus et..."
+put "Hello world" into line 1 of field "text"
+on mouseUp
+    set the itemDelimiter to ":"	Delimiter to oddzielacz
+    answer item 7 of field "text"
+end mouseUp
+find "urna" in field "text"
+replace "at" with "XX" in field "text"
+on mouseUp
+    put the text of field "text" into tFieldText
+    put replaceText(tFieldText, "N[A-Za-z]*","NNN") into field "text"
+end mouseUp
+Note: Because replaceText takes a string we put the contents of the field into a variable, use the replaceText function on the variable and put the result back into the field.
+
+
+
+
+	zmiana koloru za pomoca przyciskow w skrypcie karty
+Add a mouseUp handler to the card script, within it we use the target function to check which button was pressed.
+on mouseUp
+    local tColor
+    ## Use the target function to check which button was pressed
+    ## The short name of the buttons are red, blue and green 
+    ## so we can use that to set the color 
+    put the short name of the target into tColor
+    set the textColor of field "text" to tColor
+end mouseUp
+
+	zmiana koloru za pomoca przyciskow oraz wlasnej 'funkcji'
+Open the Code Editor for the card and add the following custom command
+command colorText pColor
+    set the textColor of field "text" to pColor
+end colorText
+This command takes a parameter, pColor, and sets the text color of the field to the value of that parameter.
+Now open the script of button 'Red', change the mouseUp handler so it calls the custom command, passing the color as a parameter.
+on mouseUp
+    colorText "red"
+end mouseUp
+Repeat this for the other buttons, changing the parameter in each case.
+An alternative option is to handle mouseUp on the card and call the custom command from the card script.
+on mouseUp
+    put the short name of the target into tColor
+    colorText tColor
+end mouseUp
+	zapis odczyt pliku /url
+put field "Info" into URL "file:myfile.txt"
+get URL "http://www.example.org/stuff/nonsense.html"
+put URL "ftp://ftp.example.net/myfile" into field "Data"
+put field "Info" into line 1 of URL "file:myfile.txt
+get word 10 to 15 of URL "file:myfile.txt"
+put URL "http://www.runrev.com" into field "text"
+on mouseUp
+    ## Ask the user to choose a file
+    answer file "Please choose a file"
+    ## If the dialog is not cancelled put the path to the selected file into a variable
+    ## Use the URL keyword to put the contents of the file into a field
+    if the result is not "cancel" then
+        put it into tFilename
+        put url ("file:" & tFilename) into field "text"
+    end if
+end mouseUp
+put specialFolderPath("documents") & "/Test Doc.txt" into tFilePath
+This command puts the full path to a file in the documents folder called "Text Doc.txt" into the variable tFilePath. You can then use that path to read from or write to the file.
+
+
+
+	handlery
+mouseEnter: sent when the mouse pointer enters an object
+mouseMove: sent when the user moves the mouse within the object area
+mouseDown: sent when the user presses the mouse button
+mouseUp: sent when the user releases the mouse button

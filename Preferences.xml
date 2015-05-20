@@ -1,0 +1,75 @@
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<channels>
+   <channel>
+      <video-mode>PAL</video-mode>
+      <stage>
+         <layers>
+            <layer>
+               <status>playing</status>
+               <auto_delta>-1</auto_delta>
+               <frame-number>34696</frame-number>
+               <nb_frames>4294967295</nb_frames>
+               <frames-left>4294932600</frames-left>
+               <foreground>
+                  <producer>
+                     <type>ffmpeg-producer</type>
+                     <filename>E:\Caspar_media\media\LECH_TV_back_10loop.mov</filename>
+                     <width>720</width>
+                     <height>576</height>
+                     <progressive>true</progressive>
+                     <fps>25</fps>
+                     <loop>true</loop>
+                     <frame-number>34696</frame-number>
+                     <nb-frames>4294967295</nb-frames>
+                     <file-frame-number>196</file-frame-number>
+                     <file-nb-frames>250</file-nb-frames>
+                  </producer>
+               </foreground>
+               <background>
+                  <producer>
+                     <type>empty-producer</type>
+                  </producer>
+               </background>
+               <index>0</index>
+            </layer>
+            <layer>
+               <status>playing</status>
+               <auto_delta>-1</auto_delta>
+               <frame-number>34745</frame-number>
+               <nb_frames>4294967295</nb_frames>
+               <frames-left>4294932551</frames-left>
+               <foreground>
+                  <producer>
+                     <type>flash-producer</type>
+                  </producer>
+               </foreground>
+               <background>
+                  <producer>
+                     <type>empty-producer</type>
+                  </producer>
+               </background>
+               <index>9999</index>
+            </layer>
+         </layers>
+      </stage>
+      <mixer/>
+      <output>
+         <consumers>
+            <consumer>
+               <type>decklink-consumer</type>
+               <key-only>false</key-only>
+               <device>1</device>
+               <low-latency>0</low-latency>
+               <embedded-audio>true</embedded-audio>
+               <low-latency>0</low-latency>
+               <index>301</index>
+            </consumer>
+         </consumers>
+      </output>
+      <index>1</index>
+   </channel>
+</channels>
+
+

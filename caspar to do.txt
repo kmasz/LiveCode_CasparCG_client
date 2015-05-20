@@ -1,0 +1,9 @@
+1. jeden guzik connect/disconect + kolory
+2. log ma sie skrolowac na najnowsze
+2. data/godz. w logu??
+3. pola IP i SEND zrobic ograniczenie do jednej linii
+4. Podczas łącznia wysyłanie cls i tls
+5. Po rozłączeniu zerowanie tabel tempalta i video (przy włączaniu też)
+6. zczytywanie ustawień komendą INFO
+7. Funkcje do komend casparaowych
+8. przyciski odsiwerzania tabel movie/template (zamiast wysyłania tls/cls)

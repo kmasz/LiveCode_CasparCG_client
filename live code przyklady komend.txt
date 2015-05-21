@@ -1,4 +1,4 @@
-	poruszanie sie po kartach
+		poruszanie sie po kartach
 go to the next card
 go to the previous card
 go to card "main menu"
